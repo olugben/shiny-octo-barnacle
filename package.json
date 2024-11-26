@@ -2,11 +2,11 @@
   "name": "jamstackdotorg",
   "version": "2.0.0",
   "description": "Home page for the Jamstack community",
-  "author": "Phil Hawksworth",
-  "license": "MIT",
+  "author": "Hammed Olugbenga",
+  "license": "rocktech",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/jamstack/jamstack.org"
+    "type": "git"
+    
   },
   "engines": {
     "node": ">=12"
@@ -15,8 +15,8 @@
     "build": "npm-run-all build:html build:css",
     "build:html": "eleventy",
     "build:css": "postcss src/css/tailwind.css -o dist/css/styles.css",
-    "watch:html": "ELEVENTY_ENV=dev eleventy --serve --port=8080 --quiet",
-    "watch:css": "postcss src/css/tailwind.css -o dist/css/styles.css --watch",
+   "watch:html": "cross-env ELEVENTY_ENV=dev eleventy --serve --port=8080 --quiet",
+  "watch:css": "postcss src/css/tailwind.css -o dist/css/styles.css --watch",
     "start": "npm-run-all --parallel watch:html watch:css",
     "clean": "rm -rf dist"
   },
@@ -45,5 +45,8 @@
     "postcss-import": "^13.0.0",
     "spdx-correct": "^3.1.1",
     "tailwindcss": "^3.1.8"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
